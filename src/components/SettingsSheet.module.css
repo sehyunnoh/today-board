@@ -1,0 +1,66 @@
+.scroll {
+  max-height: 92vh;
+  overflow-y: auto;
+}
+
+.help {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin-bottom: 4px;
+}
+
+.install {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+
+.install summary {
+  cursor: pointer;
+  font-weight: 700;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.install p { margin-top: 4px; }
+
+.hint {
+  font-size: 12px;
+  color: var(--mute);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.state {
+  font-size: 13px;
+  background: var(--accent-soft);
+  color: #8a5a3c;
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+.err {
+  background: #f7d9d0;
+  color: #9c3a1f;
+}
+
+.sub {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.link {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-text);
+  min-height: 40px;
+  padding: 0 4px;
+}
+
+.danger { color: #9c3a1f; }

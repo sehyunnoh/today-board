@@ -1,0 +1,33 @@
+.scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(60, 40, 20, 0.35);
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.dialog {
+  width: 100%;
+  max-width: 360px;
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 22px 20px;
+  text-align: center;
+}
+
+.title { font-size: 17px; }
+.msg { font-size: 14px; margin: 8px 0 0; color: var(--ink-2); line-height: 1.5; }
+
+.btns { display: flex; gap: 10px; margin-top: 18px; }
+
+.btn {
+  flex: 1;
+  padding: 14px;
+  border-radius: 16px;
+  font-weight: 700;
+  background: var(--line);
+}
+
+.del { background: #f7d9d0; color: #9c3a1f; }

@@ -1,0 +1,41 @@
+.panel {
+  background: var(--surface);
+  border-radius: var(--radius-panel);
+  padding: 16px 18px;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.ring {
+  --p: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: conic-gradient(var(--accent) calc(var(--p) * 1%), var(--line) 0);
+  display: grid;
+  place-items: center;
+  flex: none;
+  transition: background 0.3s;
+}
+
+.ring span {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--surface);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.msg {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.msg b {
+  color: var(--accent-text);
+}

@@ -1,0 +1,33 @@
+.box {
+  background: var(--surface);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow);
+  padding: 28px 22px;
+  text-align: center;
+  break-inside: avoid;
+}
+
+.emoji { font-size: 40px; line-height: 1; }
+.box h2 { font-size: 17px; margin-top: 12px; }
+.box p { font-size: 14px; color: var(--ink-2); line-height: 1.6; margin-top: 8px; }
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.primary,
+.secondary {
+  min-height: var(--tap);
+  border-radius: 16px;
+  font-weight: 700;
+  padding: 0 16px;
+}
+
+.primary { background: var(--accent-strong); color: #fff; }
+.secondary { background: var(--accent-soft); color: var(--accent-text); }
+
+.primary:focus-visible,
+.secondary:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; }

@@ -1,0 +1,97 @@
+.card {
+  background: var(--surface);
+  border: 2px solid transparent;
+  border-radius: var(--radius-card);
+  margin-bottom: 12px;
+  padding: 4px 16px;
+  box-shadow: var(--shadow-soft);
+  break-inside: avoid;
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.done {
+  background: linear-gradient(180deg, var(--done-bg), #f6fbf1);
+  border-color: var(--done-line);
+}
+
+.headRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.head:disabled {
+  cursor: default;
+}
+
+.addRow {
+  width: 100%;
+  text-align: left;
+  padding: 10px 0 4px 36px;
+  color: var(--accent-text);
+  font-weight: 700;
+  font-size: 14px;
+  min-height: var(--tap);
+}
+
+.head {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 0;
+  text-align: left;
+  font-weight: 700;
+  font-size: 16px;
+  min-height: var(--tap);
+}
+
+.emoji {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  flex: none;
+}
+
+.done .emoji {
+  background: var(--ok);
+  color: #fff;
+  font-weight: 800;
+}
+
+.name {
+  flex: 0 1 auto;
+}
+
+.badge {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--done-ink);
+  background: #d4ecc6;
+  padding: 4px 10px;
+  border-radius: 99px;
+}
+
+.badge:empty {
+  visibility: hidden;
+}
+
+.chev {
+  color: var(--mute);
+  font-size: 20px;
+  transition: transform 0.2s;
+}
+
+.chev.open {
+  transform: rotate(90deg);
+}
+
+.body {
+  padding-bottom: 10px;
+}

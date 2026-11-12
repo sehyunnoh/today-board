@@ -1,0 +1,11 @@
+node_modules
+dist
+*.local
+.env*
+.vscode
+
+# 개인 문서/시안은 Private 저장소(today-board-data/docs)에서 관리한다
+Daily.md
+requirements.md
+implementation-plan.md
+design/

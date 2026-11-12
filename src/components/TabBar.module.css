@@ -1,0 +1,31 @@
+.bar {
+  position: fixed;
+  left: 50%;
+  bottom: calc(12px + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  width: min(92vw, 360px);
+  z-index: 40;
+  display: flex;
+  padding: 6px;
+  background: var(--surface);
+  border-radius: 99px;
+  box-shadow: 0 8px 22px rgba(160, 120, 70, 0.22);
+}
+
+.bar button {
+  flex: 1;
+  min-height: 44px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mute);
+}
+
+.bar button.on {
+  background: var(--accent-soft);
+  color: var(--accent-text);
+}
+
+.bar button:focus-visible {
+  outline: 3px solid var(--accent-soft);
+}

@@ -1,0 +1,19 @@
+.wrap {
+  max-width: 420px;
+  margin: 18vh auto 0;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.wrap h1 { font-size: 22px; margin-bottom: 8px; }
+.wrap p { color: var(--ink-2); line-height: 1.6; }
+
+.wrap button {
+  margin-top: 20px;
+  padding: 12px 22px;
+  min-height: var(--tap);
+  border-radius: 16px;
+  background: var(--accent-strong);
+  color: #fff;
+  font-weight: 700;
+}

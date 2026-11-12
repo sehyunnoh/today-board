@@ -1,0 +1,27 @@
+/* B 시안(따뜻하고 부드러운 느낌) 디자인 토큰 */
+:root {
+  --bg: #fbf3e6;
+  --ink: #4a3b2f;
+  --mute: #75604a; /* 글자용: 배경 위에서 대비 4.5:1 이상 */
+  --line: #f3e6d3;
+  --accent: #e8845f; /* 막대, 버튼 바탕 등 채우기용 */
+  --accent-strong: #b9552f; /* 흰 글자가 올라가는 채움 버튼 바탕 (대비 4.5:1 이상) */
+  --accent-text: #a8492a; /* 글자용 주황: 흰색/크림 배경 위에서 대비 4.5:1 이상 */
+  --ink-2: #6a5848; /* 보조 글자 */
+  --accent-soft: #fbeed9;
+  --sun: #ffe9b8;
+  --leaf: #dcecd9;
+  --done-bg: #eaf5e3;
+  --done-line: #bfdcae;
+  --done-ink: #2d6a3c;
+  --ok: #6bbf8a;
+  --surface: #ffffff;
+
+  --radius-card: 22px;
+  --radius-panel: 24px;
+  --shadow: 0 6px 16px rgba(160, 120, 70, 0.12);
+  --shadow-soft: 0 4px 12px rgba(160, 120, 70, 0.09);
+  --tap: 48px;
+
+  --font: 'Pretendard Variable', Pretendard, 'Noto Sans KR', 'Malgun Gothic', system-ui, sans-serif;
+}

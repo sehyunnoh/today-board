@@ -1,0 +1,28 @@
+.tools {
+  display: flex;
+  gap: 2px;
+  flex: none;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  color: var(--mute);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  outline: none;
+}
+
+.del:hover,
+.del:focus-visible {
+  background: #f7d9d0;
+  color: #9c3a1f;
+}

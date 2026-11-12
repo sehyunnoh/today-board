@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>Today Board</title>
+  <circle cx="32" cy="32" r="30" fill="#2F9460"/>
+  <path d="M18.5 33 L28 42.5 L46 22.5" fill="none" stroke="#FFFFFF" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

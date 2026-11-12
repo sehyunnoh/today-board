@@ -1,0 +1,88 @@
+.card {
+  border-radius: var(--radius-card);
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.weather { background: var(--sun); }
+.fx { background: var(--leaf); }
+
+.label { font-size: 12px; color: var(--ink-2); }
+.big { display: block; font-size: 22px; margin-top: 2px; }
+.sub { font-style: normal; font-size: 12px; color: var(--ink-2); margin-top: 2px; }
+
+.status { font-size: 11px; color: var(--ink-2); margin-top: 8px; }
+.warn { color: var(--accent-text); }
+
+.retry {
+  margin-left: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-text);
+  text-decoration: underline;
+  min-height: 32px;
+}
+
+/* 모바일: 자세히 영역은 접어 두고 버튼으로 펼친다. 펼치면 한 줄을 다 차지한다. */
+.details { display: none; margin-top: 10px; }
+.open .details { display: block; }
+.open { grid-column: 1 / -1; }
+
+.more {
+  align-self: flex-start;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-2);
+  min-height: 32px;
+}
+
+.forecast {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 12px;
+  text-align: center;
+  color: var(--ink-2);
+}
+
+.forecast li { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.forecast b { font-size: 18px; }
+.forecast i { font-style: normal; font-weight: 400; } /* 최저 기온: 투명도 대신 굵기로 구분 (대비 유지) */
+
+.conv { display: flex; gap: 8px; align-items: center; font-size: 13px; }
+
+.conv input {
+  flex: 1;
+  min-width: 0;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  padding: 8px 10px;
+  font-size: 16px;
+}
+
+.conv input[aria-invalid='true'] { border-color: #e2a08a; }
+
+.swap {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+}
+
+.result { font-weight: 800; font-size: 17px; margin: 8px 0 2px; }
+
+/* PC: 오른쪽 패널에서는 자세히 영역을 항상 보여준다. */
+@media (min-width: 900px) {
+  .details { display: block; }
+  .more { display: none; }
+  .big { font-size: 28px; }
+  .open { grid-column: auto; }
+}

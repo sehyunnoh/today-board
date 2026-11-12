@@ -1,0 +1,74 @@
+.scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(60, 40, 20, 0.35);
+  z-index: 50;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.sheet {
+  width: 100%;
+  max-width: 520px;
+  background: var(--surface);
+  border-radius: 28px 28px 0 0;
+  padding: 20px 18px calc(26px + env(safe-area-inset-bottom));
+  animation: up 0.2s ease-out;
+}
+
+@keyframes up {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+.title { font-size: 17px; margin-bottom: 14px; }
+
+.label {
+  display: block;
+  font-size: 12px;
+  color: var(--mute);
+  font-weight: 600;
+  margin: 12px 0 6px;
+}
+
+.input {
+  width: 100%;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: var(--bg);
+  font-size: 16px; /* iOS에서 입력 시 화면이 확대되지 않게 16px 이상 */
+}
+
+.input:focus { outline: none; border-color: var(--accent); }
+
+.emojiRow { display: flex; gap: 10px; align-items: flex-start; }
+.emojiInput { width: 64px; text-align: center; flex: none; }
+.presets { display: flex; flex-wrap: wrap; gap: 4px; }
+
+.preset {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 18px;
+  background: var(--accent-soft);
+}
+
+.btns { display: flex; gap: 10px; margin-top: 20px; }
+
+.btn {
+  flex: 1;
+  padding: 14px;
+  border-radius: 16px;
+  font-weight: 700;
+  background: var(--line);
+}
+
+.pri { background: var(--accent-strong); color: #fff; }
+.pri:disabled { opacity: 0.45; cursor: not-allowed; }
+
+@media (min-width: 900px) {
+  .scrim { align-items: center; }
+  .sheet { border-radius: 28px; max-width: 460px; }
+}

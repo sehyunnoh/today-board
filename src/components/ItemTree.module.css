@@ -1,0 +1,66 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.item {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: var(--tap);
+  cursor: pointer;
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.item input[type='checkbox']:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--mute);
+}
+
+.item input[type='checkbox'],
+.indicator {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #e2cdb0;
+  background: var(--surface);
+  transition: 0.15s;
+  cursor: pointer;
+}
+
+.indicator {
+  cursor: default;
+  display: block;
+}
+
+.item input[type='checkbox']:checked,
+.indicator.on {
+  background: var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3.2L15 6.8' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  border-color: var(--accent);
+}
+
+.item input[type='checkbox']:focus-visible {
+  outline: 3px solid var(--accent-soft);
+  outline-offset: 2px;
+}
+
+.item:has(input:checked) .text {
+  color: var(--mute);
+  text-decoration: line-through;
+}

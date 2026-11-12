@@ -1,0 +1,24 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { min-height: 100%; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-tap-highlight-color: transparent;
+  word-break: keep-all; /* 한국어는 글자 중간이 아니라 단어 단위로 줄바꿈 */
+  overflow-wrap: anywhere; /* 아주 긴 단어(주소 등)는 넘치지 않게 */
+}
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+input, select { font: inherit; color: inherit; }
+
+/* 움직임을 줄이도록 설정한 사용자(멀미, 접근성 설정)에게는 전환/애니메이션을 사실상 끈다 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

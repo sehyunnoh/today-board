@@ -1,0 +1,20 @@
+.handle {
+  width: 32px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  flex: none;
+  color: #d3bfa3;
+  font-size: 20px;
+  cursor: grab;
+  touch-action: none; /* 터치로 끌 때 화면이 스크롤되지 않게 한다 */
+  border-radius: 10px;
+}
+
+.handle:active {
+  cursor: grabbing;
+}
+
+.handle:focus-visible {
+  outline: 3px solid var(--accent-soft);
+}
