@@ -62,3 +62,5 @@ export function useCachedResource<T>(key: string, fetcher: () => Promise<T>, ttl
 
   return { ...state, refresh };
 }
+
+export type CachedResource<T> = ReturnType<typeof useCachedResource<T>>;

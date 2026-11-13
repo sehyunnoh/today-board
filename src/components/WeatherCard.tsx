@@ -1,16 +1,15 @@
 import { useState } from 'react';
-import { LOCATION, WEATHER_TTL_MS } from '../config';
+import { LOCATION } from '../config';
 import { weekdayKo } from '../domain/date';
-import { weatherInfo } from '../domain/weather';
-import { useCachedResource } from '../hooks/useCachedResource';
-import { fetchWeather } from '../services/weather';
+import { weatherInfo, type Weather } from '../domain/weather';
+import type { CachedResource } from '../hooks/useCachedResource';
 import StatusLine from './StatusLine';
 import styles from './InfoCard.module.css';
 
 const deg = (n: number) => `${Math.round(n)}°`;
 
-export default function WeatherCard() {
-  const { data, status, fetchedAt, refresh } = useCachedResource('today-board:weather', fetchWeather, WEATHER_TTL_MS);
+export default function WeatherCard({ resource }: { resource: CachedResource<Weather> }) {
+  const { data, status, fetchedAt, refresh } = resource;
   const [open, setOpen] = useState(false);
 
   if (!data) {

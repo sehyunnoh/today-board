@@ -26,6 +26,24 @@
 }
 .prog { grid-area: prog; }
 
+.refresh {
+  grid-column: 1 / -1;
+  justify-self: end;
+  align-self: flex-end; /* 데스크톱(세로 flex)에서도 오른쪽 정렬 */
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-text);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow);
+}
+.refresh:disabled { opacity: 0.7; cursor: default; }
+.spin { display: inline-block; animation: spin 0.9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spin { animation: none; } }
+
 .headTop {
   display: flex;
   align-items: flex-start;

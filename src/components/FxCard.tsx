@@ -1,15 +1,13 @@
 import { useState } from 'react';
-import { FX_TTL_MS } from '../config';
-import { cadToKrw, krwToCad, parseAmount } from '../domain/fx';
-import { useCachedResource } from '../hooks/useCachedResource';
-import { fetchFx } from '../services/fx';
+import { cadToKrw, krwToCad, parseAmount, type FxRate } from '../domain/fx';
+import type { CachedResource } from '../hooks/useCachedResource';
 import StatusLine from './StatusLine';
 import styles from './InfoCard.module.css';
 
 const nf = (max: number) => new Intl.NumberFormat('ko-KR', { maximumFractionDigits: max });
 
-export default function FxCard() {
-  const { data, status, fetchedAt, refresh } = useCachedResource('today-board:fx', fetchFx, FX_TTL_MS);
+export default function FxCard({ resource }: { resource: CachedResource<FxRate> }) {
+  const { data, status, fetchedAt, refresh } = resource;
   const [open, setOpen] = useState(false);
   const [fromCad, setFromCad] = useState(true); // true: CAD → 원, false: 원 → CAD
   const [text, setText] = useState('100');

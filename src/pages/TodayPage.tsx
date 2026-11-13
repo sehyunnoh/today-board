@@ -18,7 +18,11 @@ import FxCard from '../components/FxCard';
 import ProgressPanel from '../components/ProgressPanel';
 import SyncBadge from '../components/SyncBadge';
 import WeatherCard from '../components/WeatherCard';
+import { FX_TTL_MS, WEATHER_TTL_MS } from '../config';
 import { activeCategories, progress } from '../domain/completion';
+import { useCachedResource } from '../hooks/useCachedResource';
+import { fetchFx } from '../services/fx';
+import { fetchWeather } from '../services/weather';
 import { formatDateLabel } from '../domain/date';
 import { useBoardStore } from '../store/useBoardStore';
 import styles from './TodayPage.module.css';
@@ -37,6 +41,18 @@ export default function TodayPage({ onOpenSettings }: { onOpenSettings: () => vo
   const [editing, setEditing] = useState(false);
   const [sheet, setSheet] = useState<SheetState | null>(null);
   const [deleting, setDeleting] = useState<DeleteTarget | null>(null);
+
+  const weather = useCachedResource('today-board:weather', fetchWeather, WEATHER_TTL_MS);
+  const fx = useCachedResource('today-board:fx', fetchFx, FX_TTL_MS);
+  const [refreshing, setRefreshing] = useState(false);
+  const refreshInfo = async () => {
+    setRefreshing(true);
+    try {
+      await Promise.all([weather.refresh(), fx.refresh()]);
+    } finally {
+      setRefreshing(false);
+    }
+  };
 
   const checked = useMemo(() => new Set(checkedIds ?? []), [checkedIds]);
   const { done, total } = progress(list, checked);
@@ -102,8 +118,20 @@ export default function TodayPage({ onOpenSettings }: { onOpenSettings: () => vo
         </header>
         <aside className={styles.side}>
           <div className={styles.info}>
-            <WeatherCard />
-            <FxCard />
+            <button
+              type="button"
+              className={styles.refresh}
+              onClick={() => void refreshInfo()}
+              disabled={refreshing}
+              aria-label="날씨와 환율 지금 새로고침"
+            >
+              <span className={refreshing ? styles.spin : undefined} aria-hidden="true">
+                ↻
+              </span>{' '}
+              {refreshing ? '갱신 중…' : '날씨·환율 새로고침'}
+            </button>
+            <WeatherCard resource={weather} />
+            <FxCard resource={fx} />
           </div>
           <div className={styles.prog}>
             <ProgressPanel done={done} total={total} />
